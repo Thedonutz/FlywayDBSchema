@@ -16,7 +16,9 @@ public class FlywayMain {
 
 		// Point it to the database
 		flyway.setDataSource(
-				"jdbc:mysql://localhost:3306/Pokemon?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+				"jdbc:mysql://localhost:3306/Pokemon?useUnicode="
+				+ "true&useJDBCCompliantTimezoneShift="
+				+ "true&useLegacyDatetimeCode=false&serverTimezone=UTC",
 				"root", "donut");
 
 		// Start the migration
