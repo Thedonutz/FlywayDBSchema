@@ -1,1 +1,0 @@
-insert into test_data(value) values ("hi");

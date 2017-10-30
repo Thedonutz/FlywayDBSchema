@@ -20,6 +20,7 @@ public class FlywayMain {
 				+ "true&useJDBCCompliantTimezoneShift="
 				+ "true&useLegacyDatetimeCode=false&serverTimezone=UTC",
 				"root", "donut");
+		flyway.setBaselineOnMigrate(true);
 
 		// Start the migration
 		flyway.migrate();
