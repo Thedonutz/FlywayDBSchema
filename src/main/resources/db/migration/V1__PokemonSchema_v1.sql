@@ -69,6 +69,7 @@ CREATE TABLE Trainer (
  LastName VARCHAR(25),
  BirthDate DATE,
  City_From VARCHAR (20),
+ Advised_By INT NOT NULL, 
  Sex CHAR(1),
  PRIMARY KEY ( TrainerID )
 );
@@ -95,9 +96,4 @@ CREATE TABLE Professor (
  PRIMARY KEY ( ProfessorID )
 );
 
-CREATE TABLE Professor_Advises (
- ProfessorID INT NOT NULL,
- TrainerID INT NOT NULL,
- PRIMARY KEY ( ProfessorID, TrainerID )
-);
  
