@@ -8,15 +8,16 @@ CREATE TABLE Pokemon (
  PRIMARY KEY( ID )
 );
 
-CREATE TABLE Pokemon_Types (
+CREATE TABLE Types (
+ Type_ID INT NOT NULL AUTO_INCREMENT,
  Name VARCHAR(20) NOT NULL,
- PRIMARY KEY(NAME)
+ PRIMARY KEY(Type_ID)
 );
 
 CREATE TABLE Pokemon_Of_Type (
- Name VARCHAR(20) NOT NULL,
- ID INT NOT NULL,
- PRIMARY KEY(Name,ID)
+ PokeDex_Number INT NOT NULL,
+ Type_ID INT NOT NULL,
+ PRIMARY KEY(PokeDex_Number, Type_ID)
 );
 
 CREATE TABLE Pokemon_Caught_By (
@@ -32,15 +33,15 @@ CREATE TABLE Pokedex_Global (
 );
 
 CREATE TABLE Pokemon_Origin (
- PokemonID INT NOT NULL,
+ PokeDex_Number INT NOT NULL,
  RegionName VARCHAR(20),
- PRIMARY KEY( PokemonID, RegionName)
+ PRIMARY KEY( PokeDex_Number , RegionName)
 );
 
-CREATE TABLE Pokemon_Evolves_To (
+CREATE TABLE Pokemon_Evolved_From (
  BasePokeDex_Number INT NOT NULL,
- EvolvedPokeDex_Number INT NOT NULL,
- PRIMARY KEY( BasePokeDex_Number, EvolvedPokeDex_Number)
+ Evolved_From_PokeDex_Number INT,
+ PRIMARY KEY( BasePokeDex_Number, Evolved_From_PokeDex_Number)
 );
 
 CREATE TABLE Gym_Members (
@@ -49,21 +50,16 @@ CREATE TABLE Gym_Members (
  PRIMARY KEY( Gym_Name, TrainerID )
 );
 
-CREATE TABLE Pokemon_Natures (
+CREATE TABLE Natures (
  Name VARCHAR(20) NOT NULL,
  Description VARCHAR(255) NOT NULL UNIQUE,
  PRIMARY KEY (Name)
 );
 
-CREATE TABLE Pokemon_Type_Of_Gym (
- Type VARCHAR(20) NOT NULL,
- Gym_Name VARCHAR(20) NOT NULL,
- PRIMARY KEY (Type, Gym_Name)
-);
-
 CREATE TABLE Gym (
  Gym_Name VARCHAR(20) NOT NULL,
  LeaderID INT NOT NULL,
+ Gym_Type INT NOT NULL,
  CityName VARCHAR(20),
  PRIMARY KEY (Gym_Name)
 );
@@ -73,6 +69,8 @@ CREATE TABLE Trainer (
  FirstName VARCHAR(25) NOT NULL,
  LastName VARCHAR(25),
  BirthDate DATE,
+ City_From VARCHAR (20),
+ Advised_By INT NOT NULL, 
  Sex CHAR(1),
  PRIMARY KEY ( TrainerID )
 );
@@ -88,12 +86,6 @@ CREATE TABLE Region (
  PRIMARY KEY ( RegionName )
 );
 
-CREATE TABLE Trainer_From (
- TrainerID INT NOT NULL,
- CityName VARCHAR(20) NOT NULL,
- PRIMARY KEY ( TrainerID, CityName)
-);
-
 CREATE TABLE Professor (
  ProfessorID INT NOT NULL AUTO_INCREMENT,
  FirstName VARCHAR(25) NOT NULL,
@@ -105,15 +97,4 @@ CREATE TABLE Professor (
  PRIMARY KEY ( ProfessorID )
 );
 
-CREATE TABLE Professor_Origins (
- ProfessorID INT NOT NULL,
- CityName VARCHAR(20) NOT NULL,
- PRIMARY KEY ( ProfessorID, CityName )
-);
-
-CREATE TABLE Professor_Advises (
- ProfessorID INT NOT NULL,
- TrainerID INT NOT NULL,
- PRIMARY KEY ( ProfessorID, TrainerID )
-);
  
