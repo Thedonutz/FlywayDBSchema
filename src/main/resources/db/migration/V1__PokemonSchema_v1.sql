@@ -3,6 +3,7 @@ CREATE TABLE Pokemon (
  PokeDex_Number INT NOT NULL,
  Name VARCHAR(25) NOT NULL,
  Rarity CHAR(2) NOT NULL,
+ Nature VARCHAR(20) NOT NULL,
  Sex CHAR(1),
  PRIMARY KEY( ID )
 );
@@ -19,8 +20,8 @@ CREATE TABLE Pokemon_Of_Type (
 );
 
 CREATE TABLE Pokemon_Caught_By (
- PokemonID INT NOT NULL,
  TrainerID INT NOT NULL,
+ PokemonID INT NOT NULL,
  PRIMARY KEY(PokemonID, TrainerID)
 );
 
@@ -40,12 +41,6 @@ CREATE TABLE Pokemon_Evolves_To (
  BasePokeDex_Number INT NOT NULL,
  EvolvedPokeDex_Number INT NOT NULL,
  PRIMARY KEY( BasePokeDex_Number, EvolvedPokeDex_Number)
-);
-
-CREATE TABLE Pokemon_Has_Nature (
- PokemonID INT NOT NULL,
- Nature VARCHAR(20) NOT NULL,
- PRIMARY KEY( PokemonID, Nature)
 );
 
 CREATE TABLE Gym_Members (
