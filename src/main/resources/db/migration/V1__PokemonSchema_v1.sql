@@ -41,7 +41,7 @@ CREATE TABLE Pokemon_Origin (
 CREATE TABLE Pokemon_Evolved_From (
  BasePokeDex_Number INT NOT NULL,
  Evolved_From_PokeDex_Number INT,
- PRIMARY KEY( BasePokeDex_Number, Evolved_From_PokeDex_Number)
+ PRIMARY KEY( BasePokeDex_Number )
 );
 
 CREATE TABLE Gym_Members (
