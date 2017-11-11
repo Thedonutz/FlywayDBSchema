@@ -9,14 +9,15 @@ CREATE TABLE Pokemon (
 );
 
 CREATE TABLE Types (
+ Type_ID INT NOT NULL AUTO_INCREMENT,
  Name VARCHAR(20) NOT NULL,
- PRIMARY KEY(NAME)
+ PRIMARY KEY(Type_ID)
 );
 
 CREATE TABLE Pokemon_Of_Type (
  PokeDex_Number INT NOT NULL,
- Type VARCHAR(20) NOT NULL,
- PRIMARY KEY(PokeDex_Number, Type)
+ Type_ID INT NOT NULL,
+ PRIMARY KEY(PokeDex_Number, Type_ID)
 );
 
 CREATE TABLE Pokemon_Caught_By (
@@ -58,7 +59,7 @@ CREATE TABLE Natures (
 CREATE TABLE Gym (
  Gym_Name VARCHAR(20) NOT NULL,
  LeaderID INT NOT NULL,
- Gym_Type VARCHAR(20) NOT NULL,
+ Gym_Type INT NOT NULL,
  CityName VARCHAR(20),
  PRIMARY KEY (Gym_Name)
 );
