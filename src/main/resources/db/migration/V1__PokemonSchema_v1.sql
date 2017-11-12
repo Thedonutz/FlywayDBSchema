@@ -2,6 +2,7 @@ CREATE TABLE Pokemon (
  ID INT NOT NULL AUTO_INCREMENT,
  PokeDex_Number INT NOT NULL,
  Name VARCHAR(25) NOT NULL,
+ Caught_By VARCHAR(20),
  Rarity CHAR(2) NOT NULL,
  Nature VARCHAR(20) NOT NULL,
  Sex CHAR(1),
@@ -18,12 +19,6 @@ CREATE TABLE Pokemon_Of_Type (
  PokeDex_Number INT NOT NULL,
  Type_ID INT NOT NULL,
  PRIMARY KEY(PokeDex_Number, Type_ID)
-);
-
-CREATE TABLE Pokemon_Caught_By (
- TrainerID INT NOT NULL,
- PokemonID INT NOT NULL,
- PRIMARY KEY(PokemonID, TrainerID)
 );
 
 CREATE TABLE Pokedex_Global (
