@@ -50,10 +50,10 @@ Insert into Trainer ( FirstName, LastName, BirthDate, City_From, Advised_By, Sex
 values ( "Lucy", "Rock", '1976-05-22', "Pewter City", 1, 'F' );
 
 Insert into Trainer ( FirstName, LastName, BirthDate, City_From, Advised_By, Sex )
-values ( "Giovanni", "Water", '1976-05-22', "Cerulean City", 1, 'M' );
+values ( "Trevor", "Water", '1976-05-22', "Cerulean City", 1, 'M' );
 
 Insert into Trainer ( FirstName, LastName, BirthDate, City_From, Advised_By, Sex )
-values ( "Giovanni", "Water", '1976-05-22', "Cerulean City", 1, 'F' );
+values ( "Lauren", "Water", '1976-05-22', "Cerulean City", 1, 'F' );
 
 Insert into Trainer ( FirstName, LastName, BirthDate, City_From, Advised_By, Sex )
 values ( "Ethan", "Electric", '1976-05-22', "Vermilion City", 1, 'M' );
