@@ -41,7 +41,7 @@ CREATE TABLE Pokemon_Evolved_From (
 
 CREATE TABLE Gym_Members (
  Gym_Name VARCHAR(20) NOT NULL,
- TrainerID INT NOT NULL,
+ TrainerID INT NOT NULL UNIQUE,
  PRIMARY KEY( Gym_Name, TrainerID )
 );
 
@@ -55,7 +55,7 @@ CREATE TABLE Gym (
  Gym_Name VARCHAR(20) NOT NULL,
  LeaderID INT NOT NULL UNIQUE,
  Gym_Type INT NOT NULL,
- CityName VARCHAR(20),
+ CityName VARCHAR(20) UNIQUE,
  PRIMARY KEY (Gym_Name)
 );
 
@@ -91,5 +91,3 @@ CREATE TABLE Professor (
  Oversees_City VARCHAR(20) NOT NULL,
  PRIMARY KEY ( ProfessorID )
 );
-
- 
