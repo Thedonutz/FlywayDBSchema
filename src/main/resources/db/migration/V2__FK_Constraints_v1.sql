@@ -1,0 +1,6 @@
+ALTER TABLE Package
+ADD FOREIGN KEY (Service_ID) REFERENCES Service(Service_ID);
+
+ALTER TABLE Shows
+ADD FOREIGN KEY (Package_ID) REFERENCES Package(Package_ID),
+ADD FOREIGN KEY (Network_ID) REFERENCES Network(Network_ID);
